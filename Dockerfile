@@ -5,5 +5,5 @@ RUN apk add --no-cache build-base &&\
 	gcc -o /bin/mdns-repeater mdns-repeater.c -DHGVERSION="\"1.10\"" &&\
 	apk del build-base
 
-ENTRYPOINT ["/bin/mdns-repeater", "docker0"]
+ENTRYPOINT ["/bin/mdns-repeater", "-f", "docker0"]
 CMD ["eth0"]
